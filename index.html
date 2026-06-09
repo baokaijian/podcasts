@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podcast 漫画风格总结站点</title>
+    <meta
+      name="description"
+      content="把播客内容整理成漫画风格的信息图总结，包含总览导航、主题标签和每期深度分析。"
+    >
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="回到首页">
+        <span class="brand-mark">P</span>
+        <span>Podcast Comics</span>
+      </a>
+      <nav class="top-nav" aria-label="主导航">
+        <a href="#episodes">播客目录</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero overview-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">播客内容总结分析</p>
+          <h1>把听过的播客，画成可以复盘的思维分镜。</h1>
+          <p class="lede">
+            这里收集我听过的播客与长文稿：先提炼主线，再拆成漫画式信息图，
+            让复杂观点变成可跳转、可回看、可行动的知识页面。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="./episodes/monkey-amygdala-financial-market.html">阅读第一期</a>
+            <a class="button secondary" href="#episodes">查看目录</a>
+          </div>
+        </div>
+
+        <aside class="comic-cover" aria-label="站点视觉概览">
+          <div class="cover-strip">
+            <div class="mini-panel">
+              <span class="panel-number">01</span>
+              <strong>听完</strong>
+              <p>把音频或全文稿变成素材。</p>
+            </div>
+            <div class="mini-panel">
+              <span class="panel-number">02</span>
+              <strong>拆解</strong>
+              <p>抽出论点、冲突、案例和行动建议。</p>
+            </div>
+            <div class="mini-panel">
+              <span class="panel-number">03</span>
+              <strong>成页</strong>
+              <p>用分镜、气泡和表格组织复盘路径。</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-band" id="episodes">
+        <div class="section-heading">
+          <p class="eyebrow">Episode Index</p>
+          <h2>播客目录</h2>
+          <p>每期页面都会保留原始主题、阅读导览、深度总结和可执行反思。</p>
+        </div>
+
+        <article class="episode-card">
+          <div class="episode-meta">
+            <span class="issue">EP 01</span>
+            <span>深度分析</span>
+            <span>分镜信息图</span>
+          </div>
+          <h3>
+            <a href="./episodes/monkey-amygdala-financial-market.html">
+              说好拿十年，一天就失眠：猴子的杏仁核，还追得上现代的金融市场吗？
+            </a>
+          </h3>
+          <p>
+            从社会生物学切入，解释为什么投资者明明知道长期主义，却会在市场波动里被本能、群体和即时反馈牵着走。
+          </p>
+          <div class="tag-row" aria-label="主题标签">
+            <span>社会生物学</span>
+            <span>资本市场</span>
+            <span>行为金融</span>
+            <span>资产配置</span>
+            <span>AI 文明</span>
+          </div>
+          <a class="text-link" href="./episodes/monkey-amygdala-financial-market.html">进入详情页</a>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Podcast Comics · 静态 GitHub Pages 站点</p>
+    </footer>
+  </body>
+</html>
