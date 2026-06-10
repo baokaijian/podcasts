@@ -270,6 +270,10 @@ h3 {
   padding: clamp(20px, 4vw, 34px);
 }
 
+.episode-card + .episode-card {
+  margin-top: 22px;
+}
+
 .episode-meta,
 .tag-row {
   flex-wrap: wrap;
