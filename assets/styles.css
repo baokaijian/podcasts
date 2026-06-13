@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -35,6 +36,49 @@ body {
 
 a {
   color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 4px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 30;
+  padding: 8px 12px;
+  border: 3px solid var(--line);
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--line);
+  font-weight: 900;
+  transform: translateY(-140%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  width: 100%;
+  height: 5px;
+  background: rgba(23, 32, 42, 0.12);
+}
+
+.reading-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .site-header {
@@ -89,6 +133,14 @@ a {
 .text-link {
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+}
+
+.top-nav a {
+  padding: 4px 0;
+}
+
+.top-nav a.is-active {
+  color: var(--red);
 }
 
 .hero {
@@ -171,6 +223,14 @@ h3 {
   box-shadow: 4px 4px 0 var(--line);
   font-weight: 900;
   text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--line);
 }
 
 .button.primary {
@@ -271,6 +331,25 @@ h3 {
 .episode-card {
   max-width: 980px;
   padding: clamp(20px, 4vw, 34px);
+}
+
+.episode-card,
+.comic-panel,
+.model-card,
+.recommend-card,
+.advice-card,
+.insight-grid > div {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.episode-card:hover,
+.recommend-card:hover,
+.advice-card:hover,
+.insight-grid > div:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 rgba(23, 32, 42, 0.16);
 }
 
 .episode-card + .episode-card {
@@ -439,6 +518,17 @@ h3 {
   font-size: 14px;
   font-weight: 900;
   text-decoration: none;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.timeline a:hover,
+.timeline a.is-active {
+  color: var(--white);
+  background: var(--blue);
+  transform: translateY(-2px);
 }
 
 .comic-page {
@@ -448,6 +538,7 @@ h3 {
 }
 
 .comic-scene {
+  position: relative;
   padding: clamp(20px, 4vw, 36px);
 }
 
@@ -455,6 +546,26 @@ h3 {
   margin-bottom: 18px;
   background: var(--red);
   color: var(--white);
+}
+
+.copy-section-link {
+  position: absolute;
+  top: clamp(20px, 4vw, 36px);
+  right: clamp(20px, 4vw, 36px);
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 2px solid var(--line);
+  background: var(--white);
+  box-shadow: 3px 3px 0 rgba(23, 32, 42, 0.18);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.copy-section-link:hover {
+  background: var(--yellow);
 }
 
 .scene-grid {
@@ -646,6 +757,59 @@ blockquote {
   font-weight: 900;
 }
 
+.back-to-top {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 20;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 3px solid var(--line);
+  background: var(--yellow);
+  box-shadow: 4px 4px 0 var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 @media (max-width: 960px) {
   .hero,
   .scene-grid {
@@ -693,6 +857,11 @@ blockquote {
   .time-layers span,
   .time-layers span:nth-child(n) {
     margin-left: 0;
+  }
+
+  .copy-section-link {
+    position: static;
+    margin: -6px 0 18px;
   }
 
   .comic-cover {

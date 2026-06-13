@@ -9,8 +9,10 @@
       content="把播客内容整理成漫画风格的信息图总结，包含总览导航、主题标签和每期深度分析。"
     >
     <link rel="stylesheet" href="./assets/styles.css">
+    <script src="./assets/interactions.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="回到首页">
         <span class="brand-mark">P</span>
@@ -21,7 +23,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero overview-hero">
         <div class="hero-copy">
           <p class="eyebrow">播客内容总结分析</p>
@@ -118,5 +120,6 @@
     <footer class="site-footer">
       <p>Podcast Comics · 小红书@AI小学生夙凌</p>
     </footer>
+    <button class="back-to-top" type="button" aria-label="回到页面顶部">↑</button>
   </body>
 </html>
