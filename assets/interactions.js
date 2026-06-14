@@ -69,7 +69,7 @@
 
   const revealTargets = [
     ...document.querySelectorAll(
-      ".episode-card, .recommend-card, .advice-card, .comic-scene, .insight-grid > div, .action-section"
+      ".episode-card, .recommend-card, .advice-card, .lifestyle-card, .lifestyle-note, .comic-scene, .insight-grid > div, .action-section"
     ),
   ];
 
